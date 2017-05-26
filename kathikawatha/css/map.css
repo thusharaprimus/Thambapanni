@@ -1,0 +1,589 @@
+<style type="text/css">
+#map{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: rgb(229, 227, 223);
+    overflow: hidden;
+}
+.map-div{
+	float:left;
+	width:100%;
+	}
+.map-div-left{
+	float:left;
+	width:100%;
+	height:90%
+}
+.map-div-right{
+	float:left;
+	width:100%;
+	}
+.map-menu {
+    background: url("image/map/top.png") no-repeat scroll left top transparent;
+    height: 332px;
+    padding: 9px 0;
+    position: relative;
+    width: 223px;
+	top:5px;
+}
+.map-menu-middle {
+    background: url("image/map/middle.png") repeat-y scroll left top transparent;
+    padding: 0 9px;
+    width: 223px;
+}
+.map-menu span {
+    color: #808285;
+    font-size: 13px;
+    padding: 0 0 0 10px;
+	font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+.explore-australia-hover {
+    display: inline-block;
+    width: 175px;
+}
+.map-menu ul {
+    margin:0px;
+}
+.map-menu ul li:first-child {
+    border-radius: 6px 6px 0 0;
+    border-top: medium none;
+}
+.map-menu ul li:last-child {
+    border-radius:0 0 6px 6px;
+    border-top: medium none;
+}
+.controls-wrapper-1 {
+    right: 300px;
+    position: absolute;
+    top: 15px;
+    width: 230px;
+    z-index: 148;
+}
+.controls-wrapper {
+    right: 60px;
+    position: absolute;
+    top: 10px;
+    width: 230px;
+    z-index: 148;
+}
+.map-menu ul li#experiences a {
+    background-position: 6px 4px;
+}
+.map-menu ul li#experiences.active a, .map-menu ul li#experiences a:hover{
+	background-image: url("image/map/experience-icon.png");
+	}
+.map-menu ul li a {
+    color: #6D6D6D;
+    line-height: 17px;
+    padding: 4px 0 4px 36px;
+    text-decoration: none;
+	background-image: url("image/map/inactive-pin.png");
+    background-position: 6px 2px;
+    background-repeat: no-repeat;
+    display: block;
+    height: 14px;
+}
+
+.map-menu .map-menu-middle .map-topic {
+    width: 195px;
+    background-color: #000;
+    color: #AD452B;
+    border-radius: 4px;
+    padding: 3px 0px 3px 8px;
+}
+
+fieldset {
+    border: medium none;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+    margin-left: -40px;
+}
+.map-menu-bottom {
+    background: url("image/map/bottom.png") no-repeat scroll left bottom transparent;
+    height: 11px;
+    padding: 0 9px;
+    width: 223px;
+}
+#form label {
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+
+.myClass {
+    background: #ffffff;
+    color: #000000;
+}
+
+.map-menu ul li {
+	
+	color: #6D6D6D;
+    font-size: 12px;
+    padding-right: 26px;
+    background: none repeat scroll 0 0 #1B1C21;
+    border-bottom: 1px solid #000000;
+    border-top: 1px solid #2B2C30;
+    display: block;
+    line-height: 25px;
+    list-style: none outside none;
+    margin-right: 17px;
+	
+	}
+	
+.map-menu ul li.active{
+	background: url("image/map/white-tick.png") no-repeat scroll 166px 7px #2D2E30;
+	}
+/*map-menu ul li.active a{
+	color:#CCC !important;
+	}*/
+
+.active a {
+    color: #FFFFFF !important;
+}	
+	
+.map-menu ul li p {
+    height: 25px;
+    margin: 0;
+}	
+
+
+.boutique_hotels_active{
+	background-color: #0A425B !important;
+    border-top-color: #275765 !important;
+	}
+.boutique_villas_active{
+	background-color: #0A425B !important;
+    border-top-color: #275765 !important;
+	}
+.bungalow_active{
+	background-color: #0A425B !important;
+    border-top-color: #275765 !important;
+	}
+.guest_house_active{
+	background-color: #0A425B !important;
+    border-top-color: #275765 !important;
+	}
+.heritage_bungalow_active{
+	background-color: #0A425B !important;
+    border-top-color: #275765 !important;
+	}
+.heritage_homes_active{
+	background-color: #0A425B !important;
+    border-top-color: #275765 !important;
+	}
+.home_stay_active{
+	background-color: #0A425B !important;
+    border-top-color: #275765 !important;
+	}	
+.hotel_active{
+	background-color: #0A425B !important;
+    border-top-color: #275765 !important;
+	}
+.rented_apartment_active{
+	background-color: #0A425B !important;
+    border-top-color: #275765 !important;
+	}
+.rented_homes_active{
+	background-color: #0A425B !important;
+    border-top-color: #275765 !important;
+	}
+.srilanka_tourism_resorts_active{
+	background-color: #0A425B !important;
+    border-top-color: #275765 !important;
+	}
+.restuarents_active{
+	background-color: #0A425B !important;
+    border-top-color: #275765 !important;
+	}
+	
+	
+.map-menu ul li a#boutique_hotels:hover{
+    background-image: url("image/map/boutique_hotels.png");
+}
+.map-menu ul li a#boutique_villas:hover{
+    background-image: url("image/map/boutique_villas.png");
+}
+
+.map-menu ul li a#bungalow:hover{
+    background-image: url("image/map/bungalow.png") !important;
+}
+
+.map-menu ul li a#guest_house:hover{
+    background-image: url("image/map/guest_house.png");
+}
+.map-menu ul li a#heritage_bungalow:hover{
+    background-image: url("image/map/heritage_bungalow.png");
+}
+.map-menu ul li a#heritage_homes:hover{
+    background-image: url("image/map/heritage_homes.png");
+}
+.map-menu ul li a#home_stay:hover{
+    background-image: url("image/map/home_stay.png");
+}
+.map-menu ul li a#hotel:hover{
+    background-image: url("image/map/hotels.png");
+}
+.map-menu ul li a#rented_apartment:hover{
+    background-image: url("image/map/rented_apartment.png");
+}
+.map-menu ul li a#rented_homes:hover{
+    background-image: url("image/map/rented_homes.png");
+}
+.map-menu ul li a#srilanka_tourism_resorts:hover{
+    background-image: url("image/map/srilanka_tourism_resorts.png");
+}
+.map-menu ul li a#restuarents:hover{
+    background-image: url("image/map/restuarents.png");
+}
+
+
+.boutique_hotels_hover{
+    background-image: url("image/map/boutique_hotels.png") !important;
+}
+
+.boutique_villas_hover{
+    background-image: url("image/map/boutique_villas.png") !important;
+}
+
+.bungalow_hover{
+    background-image: url("image/map/bungalow.png") !important;
+}
+
+.guest_house_hover{
+    background-image: url("image/map/guest_house.png") !important;
+}
+.heritage_bungalow_hover{
+    background-image: url("image/map/heritage_bungalow.png") !important;
+}
+.heritage_homes_hover{
+    background-image: url("image/map/heritage_homes.png") !important;
+}
+.home_stay_hover{
+    background-image: url("image/map/home_stay.png") !important;
+}
+.hotel_hover{
+    background-image: url("image/map/hotels.png") !important;
+}
+.rented_apartment_hover{
+    background-image: url("image/map/rented_apartment.png") !important;
+}
+.rented_homes_hover{
+    background-image: url("image/map/rented_homes.png") !important;
+}
+.srilanka_tourism_resorts_hover{
+    background-image: url("image/map/srilanka_tourism_resorts.png") !important;
+}
+.restuarents_hover{
+    background-image: url("image/map/restuarents.png") !important;
+}
+
+.map-menu ul li #boutique_hotels.active{
+    background-color: #0A425B;
+    border-top-color: #275765;
+}
+.map-menu ul li #boutique_villas.active{
+    background-color: #0A425B;
+    border-top-color: #275765;
+}
+.map-menu ul li #bungalow.active{
+    background-color: #0A425B;
+    border-top-color: #275765;
+}
+.map-menu ul li #guest_house.active{
+    background-color: #0A425B;
+    border-top-color: #275765;
+}
+.map-menu ul li #heritage_bungalow.active{
+    background-color: #0A425B;
+    border-top-color: #275765;
+}
+.map-menu ul li #heritage_homes.active{
+    background-color: #0A425B;
+    border-top-color: #275765;
+}
+.map-menu ul li #home_stay.active{
+    background-color: #0A425B;
+    border-top-color: #275765;
+}
+.map-menu ul li #hotel.active{
+    background-color: #0A425B;
+    border-top-color: #275765;
+	
+}
+.map-menu ul li #rented_apartment.active{
+    background-color: #0A425B;
+    border-top-color: #275765;
+}
+.map-menu ul li #rented_homes.active{
+    background-color: #0A425B;
+    border-top-color: #275765;
+}
+.map-menu ul li #srilanka_tourism_resorts.active{
+    background-color: #0A425B;
+    border-top-color: #275765;
+}
+.map-menu ul li #restuarents.active{
+    background-color: #0A425B;
+    border-top-color: #275765;
+}
+
+.map-menu ul li a:hover{
+    color:#CCC;
+}
+/*map search*/
+
+.map-search-options-container, .map-search-options, .map-search-inner, .map-search {
+    border-radius: 6px 6px 6px 6px;
+}
+
+.map-search {
+/*    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.15);*/
+    height: 41px;
+    padding: 3px 3px 0;
+    width: 226px;
+    margin: 0 0 4px -1px;
+}
+.map-search-inner {
+    background: none repeat scroll 0 0 black;
+    border: 1px solid black;
+    padding: 4px 0 5px 4px;
+    border-radius: 0px !important;
+}
+.map-search.search-orange .map-search-inner {
+    background: none repeat scroll 0 0 #B1451E;
+    border: 1px solid #D17E60;
+    position: relative;
+}
+.map-search a.clear-search {
+    display: none;
+    vertical-align: middle;
+	color: #000000;
+    font-size: 11px;
+}
+.map-search a.clear-search:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.map-search.search-orange a.clear-search {
+    display: inline-block;
+    position: absolute;
+    right: 25px;
+    top: 9px;
+}
+.map-search.search-orange input#search-map {
+    border: medium none;
+    box-shadow: none;
+    color: #FFFFFF;
+    outline: 0 none !important;
+    width: 125px;
+}
+.page-lang-ru input#search-map {
+    font-size: 11px;
+}
+input#search-button {
+    background: url("image/map/search-btn.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    height: 26px;
+    margin-left: -45px;
+    width: 23px;
+	cursor: pointer;
+}
+input#search-button:hover {
+    background: url("image/map/search-btn-hover.png") no-repeat scroll 0 0 transparent;
+}
+.map-search.search-orange input#search-button {
+    background: url("image/map/search-btn-close.png") no-repeat scroll -2px -1px transparent;
+    float: right;
+}
+input#search-map {
+    background: none repeat scroll 0 0 #0C0E11;
+    border: medium none;
+    padding-left: 6px;
+    padding-right: 23px;
+    width: 200px;
+	height: 26px !important;
+	color: #DA5534;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif !important;
+}
+input#search-map:focus {
+    border: medium none;
+    box-shadow: none;
+    outline: 0 none;
+}
+.uneditable-input{
+	background-color: #FFFFFF;
+    border-radius: 3px 3px 3px 3px;
+    display: inline-block;
+    height: 18px;
+	}
+
+.map-search-options-container {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.15);
+    float: right;
+    margin-right: -190px;
+    margin-top: -52px;
+    padding: 3px;
+    position: relative;
+    width: 170px;
+}
+.map-search-options-container:after {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: transparent black transparent transparent;
+    border-image: none;
+    border-style: solid;
+    border-width: 9px;
+    content: " ";
+    display: inline-block;
+    height: 0;
+    margin-left: -18px;
+    position: absolute;
+    top: 13px;
+    width: 0;
+}
+.map-search-options-container:before {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: transparent rgba(255, 255, 255, 0.15) transparent transparent;
+    border-image: none;
+    border-style: solid;
+    border-width: 10px;
+    content: " ";
+    display: inline-block;
+    height: 0;
+    left: 0;
+    margin-left: -20px;
+    position: absolute;
+    top: 12px;
+    width: 0;
+}
+.map-search-options-container, .map-search-options, .map-search-inner, .map-search {
+    border-radius: 6px 6px 6px 6px;
+}
+.map-search-options {
+    background: none repeat scroll 0 0 black;
+    color: #AAAAAA;
+    padding: 6px 12px 12px;
+	font-size: 12px;
+}
+.map-search-options a {
+    display: block;
+	color: #AAAAAA;
+    text-decoration: none;
+}
+.map-search-options a:hover {
+    color: #DA5534;
+    text-decoration: none;
+}
+.map-search-options p {
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+.map-search-options p:first-child {
+    margin-top: 0;
+}
+/*logo wrapper*/
+.logo-wrapper {
+    left: 3%;
+    position: absolute;
+    text-align: center;
+    bottom: 8%;
+    width: 223px;
+    z-index: 500;
+}
+
+.info-popup{
+	font-family:"Trebuchet MS",​Arial,​Helvetica,​sans-serif;	
+}
+
+.info-popup p{
+	font-size:12px;
+}
+
+.info-popup p table tr td{
+	font-size:12px;
+}
+
+.info-popup a{
+	text-decoration:none;
+	color:#333;
+}
+
+.info-popup a:hover{
+	text-decoration:underline;
+}
+/*Location*/
+.location-search{
+    position: absolute;
+    right:4%;
+    top:13px;
+    width:223px;
+    z-index: 148;
+}
+
+select {
+    background: none repeat scroll 0 0 #0C0E11;
+    border: 3px solid rgba(250, 250, 250, 0.4);
+    border-radius: 5px 5px 5px 5px;
+    clear: both;
+    color: #DA5534;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif !important;
+    height: 38px;
+    padding: 6px 1px 2px 6px;
+    position: relative;
+    text-decoration: none;
+    width: 226px;
+    margin-left: 2px;
+/*    ------------------    */
+    border-radius: 0px;
+    border: none;
+}
+
+input#search-close {
+    background: url("image/map/search-btn-close.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    height: 26px;
+    margin-left:0px;
+    width: 23px;
+}
+input#search-close:hover {
+    background: url("image/map/search-btn-hover_colse.png") no-repeat scroll 0 0 transparent;
+}
+/*social media*/
+ul#socialHltdr {
+    background: url("image/map/sociabg.png") repeat scroll 0 0 transparent;
+    display: inline-block;
+/*    height: 440px;*/
+    height: 370px;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    top:80px;
+    width: 59px;
+    z-index: 9;
+    border-radius: 0 0 0 15px;
+}
+ul#socialHltdr li {
+    list-style: none outside none;
+    margin: 20px 0 -12px 20px;
+    padding: 0;
+}
+
+#uvTab {
+    top:85.5% !important;
+}
+
+.txtbeta{
+	color: #CCCCCC;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    left: 20px;
+    position: absolute;
+    top: 222px;
+    width: 223px;
+}
+</style>

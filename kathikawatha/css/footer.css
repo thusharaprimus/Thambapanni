@@ -1,0 +1,16 @@
+@import 'https://fonts.googleapis.com/css?family=Varela+Round';
+
+
+.footer-container {
+    color: #ffffff;
+    background-color: #4c4743;
+    font-family: 'Varela Round', sans-serif;
+    margin-top: 50px;
+}
+.footcon-col-1 {
+    margin-top: 1.5%;
+}
+
+.body{
+	min-height: 100%;
+}

@@ -1,0 +1,137 @@
+/*NEWS ON HOMEPAGE
+
+***************************************************************/
+
+body{
+    
+   
+
+}
+
+
+div#news_hm{
+	 height: 100px;
+    width: 90%;
+	margin-bottom:1000px;
+}
+
+div.he{
+	
+	margin-left: 100px;
+	}
+
+
+div.s{
+	
+	margin-bottom: 20px;
+	
+}
+
+
+
+div.news_hm div.aidanews2 .even, .aidanews2 .even{
+	background-color: transparent!important;
+}
+
+.aidanews2_line{
+	border: 0 none;
+}
+
+div#news_hm div.moduletable, div#news_hm div.moduletable div.aidanews2 div.aidanews2_art {
+	background-color: #00b3b3;
+  border: 1px solid black;
+  background: url(50%-transparent-white.png);
+  background: rgba(240,240,240,0.5);
+  
+	  background-size: auto 1800px;
+    background-repeat: repeat-x;
+	
+}
+
+div#news_hm div.moduletable{
+	background-position: left bottom;
+	margin-bottom: 20px;
+	margin-left: -14px;
+    margin-right: 132px;
+	
+	padding: 10px 10px 6px;
+
+}
+
+div#news_hm div.moduletable div.aidanews2 div.aidanews2_art{
+	background-position: 0 top;
+	background-repeat: repeat-y;
+	min-height: 980px;
+	min-width: 50%;
+	height:auto;
+	padding: 30px 40px 0;
+}
+
+div#news_hm div.moduletable div.aidanews2 div.aidanews2_art div.aidanews2_positions div.aidanews2_main div.aidanews2_mainL a.aidanews2_img1{
+   margin-right: 17px;
+}
+
+div#news_hm div.moduletable div.aidanews2 div.aidanews2_art div.aidanews2_positions div.aidanews2_main div.aidanews2_mainL a.aidanews2_img1 img{
+
+    padding: 5px;
+     -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+}
+
+div#news_hm div.moduletable div.aidanews2 div.aidanews2_art div.aidanews2_positions div.aidanews2_main div.aidanews2_mainC h1.aidanews2_title{
+	clear: both;
+	display: block;
+	line-height: 23px;
+    margin-bottom: 3px;
+}
+
+div#news_hm div.moduletable div.aidanews2 div.aidanews2_art div.aidanews2_positions div.aidanews2_main h1.ax{
+	
+	text-align:center;
+	clear: both;
+	display: block;
+	line-height: 23px;
+    margin-bottom: 7px;
+}
+
+div#news_hm div.moduletable div.aidanews2 div.aidanews2_art div.aidanews2_positions div.aidanews2_main div.aidanews2_mainC{
+	clear: both;
+
+}
+
+div#news_hm div.moduletable div.aidanews2 div.aidanews2_art div.aidanews2_positions div.aidanews2_main div.aidanews2_mainC span.aidanews2_text{
+	color: #2D343E;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 0.8em;
+    font-weight: bold;
+	
+    margin-bottom: 3px;
+	padding: 0 2px 24px 2px;
+	text-align:justify;
+}
+
+div#news_hm div.moduletable div.aidanews2 div.aidanews2_art div.aidanews2_positions div.aidanews2_main div.aidanews2_mainC h1.aidanews2_title a{
+	color: #2D343E;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+div#news_hm div.moduletable div.aidanews2 div.aidanews2_art div.aidanews2_positions div.aidanews2_main div.aidanews2_mainC a.readon{
+	display: block;
+	margin-top: 15px;
+}
+
+div#news_hm div.moduletable div.aidanews2_bottomlink{
+	display: none;
+}
+
+
+
+
+
+
