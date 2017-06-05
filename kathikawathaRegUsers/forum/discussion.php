@@ -159,7 +159,7 @@ $name = $_SESSION['MM_Email'];
                     </div>
 					
 					<a class="topic-date mylbl">EDIT</a>
-					<a   class="topic-date mylbl">DELETE</a>
+					<a href="delete.php?id=<?php echo $row['topic_id']; ?>" class="topic-date mylbl">DELETE</a>
 					
                     <div>
                     	<div class="col-xs-push-11 col-xs-1">
