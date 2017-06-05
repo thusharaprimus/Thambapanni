@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2017 at 09:09 AM
+-- Generation Time: Jun 05, 2017 at 10:30 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.2
 
@@ -54,39 +54,58 @@ CREATE TABLE `post` (
   `post_content` text NOT NULL,
   `post_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `post_topic` int(8) NOT NULL,
-  `parent_post` int(8) NOT NULL
+  `parent_post` int(8) NOT NULL,
+  `name` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `post`
 --
 
-INSERT INTO `post` (`post_id`, `post_content`, `post_date`, `post_topic`, `parent_post`) VALUES
-(81, 'Some people says he is king Parakramabahu I', '2017-04-26 20:01:26', 128, -1),
-(82, 'can be', '2017-04-26 20:05:44', 128, -1),
-(83, 'Chronicles says it is Dambhakolapatuna', '2017-04-27 02:37:39', 129, -1),
-(84, 'fuisngu\r\n', '2017-04-27 03:07:23', 130, -1),
-(85, 'reyethe', '2017-04-28 17:58:27', 129, 83),
-(86, 'dgdthufyjg', '2017-05-15 06:09:56', 122, -1),
-(87, 'cgjkjbkb l', '2017-05-15 06:10:05', 122, 86),
-(88, 'sadasdsad', '2017-05-26 10:35:12', 122, -1),
-(89, 'asdsadsadsad', '2017-05-26 10:35:17', 122, 88),
-(90, 'adsadsasad', '2017-05-26 10:35:22', 122, 86),
-(91, 'asdsadsadasdsa', '2017-05-26 10:35:26', 122, 87),
-(92, 'asdsaasas', '2017-05-26 10:35:30', 122, 91),
-(93, 'asassa', '2017-05-26 10:35:43', 122, 92),
-(94, 'delushaan', '2017-05-27 05:04:09', 132, -1),
-(95, 'delu\r\n', '2017-05-27 05:04:17', 132, 94),
-(96, 'zxccx', '2017-05-27 05:09:12', 122, -1),
-(97, 'sdfdsfd', '2017-05-27 05:09:46', 132, -1),
-(98, 'dfsfds', '2017-05-27 05:09:51', 132, 97),
-(99, 'asdsad', '2017-06-05 05:44:41', 122, -1),
-(100, 'aaaaaaaaaaaaaa', '2017-06-05 05:44:47', 122, -1),
-(101, 'asdsd', '2017-06-05 05:45:21', 125, -1),
-(102, 'asdsd', '2017-06-05 05:52:05', 123, -1),
-(103, 'adsd', '2017-06-05 06:01:58', 123, -1),
-(104, 'adasd', '2017-06-05 06:05:08', 123, 102),
-(105, 'asdasdsad', '2017-06-05 06:27:46', 134, -1);
+INSERT INTO `post` (`post_id`, `post_content`, `post_date`, `post_topic`, `parent_post`, `name`) VALUES
+(81, 'Some people says he is king Parakramabahu I', '2017-04-26 20:01:26', 128, -1, NULL),
+(82, 'can be', '2017-04-26 20:05:44', 128, -1, NULL),
+(83, 'Chronicles says it is Dambhakolapatuna', '2017-04-27 02:37:39', 129, -1, NULL),
+(84, 'fuisngu\r\n', '2017-04-27 03:07:23', 130, -1, NULL),
+(85, 'reyethe', '2017-04-28 17:58:27', 129, 83, NULL),
+(86, 'dgdthufyjg', '2017-05-15 06:09:56', 122, -1, NULL),
+(87, 'cgjkjbkb l', '2017-05-15 06:10:05', 122, 86, NULL),
+(88, 'sadasdsad', '2017-05-26 10:35:12', 122, -1, NULL),
+(89, 'asdsadsadsad', '2017-05-26 10:35:17', 122, 88, NULL),
+(90, 'adsadsasad', '2017-05-26 10:35:22', 122, 86, NULL),
+(91, 'asdsadsadasdsa', '2017-05-26 10:35:26', 122, 87, NULL),
+(92, 'asdsaasas', '2017-05-26 10:35:30', 122, 91, NULL),
+(93, 'asassa', '2017-05-26 10:35:43', 122, 92, NULL),
+(94, 'delushaan', '2017-05-27 05:04:09', 132, -1, NULL),
+(95, 'delu\r\n', '2017-05-27 05:04:17', 132, 94, NULL),
+(96, 'zxccx', '2017-05-27 05:09:12', 122, -1, NULL),
+(97, 'sdfdsfd', '2017-05-27 05:09:46', 132, -1, NULL),
+(98, 'dfsfds', '2017-05-27 05:09:51', 132, 97, NULL),
+(99, 'asdsad', '2017-06-05 05:44:41', 122, -1, NULL),
+(100, 'aaaaaaaaaaaaaa', '2017-06-05 05:44:47', 122, -1, NULL),
+(101, 'asdsd', '2017-06-05 05:45:21', 125, -1, NULL),
+(102, 'asdsd', '2017-06-05 05:52:05', 123, -1, NULL),
+(103, 'adsd', '2017-06-05 06:01:58', 123, -1, NULL),
+(104, 'adasd', '2017-06-05 06:05:08', 123, 102, NULL),
+(105, 'asdasdsad', '2017-06-05 06:27:46', 134, -1, NULL),
+(106, 'dfsd', '2017-06-05 07:19:36', 122, -1, NULL),
+(107, 'dfsd', '2017-06-05 07:19:36', 122, -1, NULL),
+(108, 'asdasdsasad', '2017-06-05 07:42:30', 122, -1, NULL),
+(109, 'asdasd', '2017-06-05 07:44:19', 122, -1, ''),
+(110, 'delushaan', '2017-06-05 07:44:47', 122, -1, 'aaa@gmail.com'),
+(111, 'test1', '2017-06-05 07:47:45', 122, -1, 'aaa@gmail.com'),
+(112, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '2017-06-05 07:48:20', 122, -1, 'aaa@gmail.com'),
+(113, 'asdasd', '2017-06-05 07:56:35', 122, 112, 'aaa@gmail.com'),
+(114, 'asdasd', '2017-06-05 07:56:35', 122, 112, 'aaa@gmail.com'),
+(115, 'asdsa', '2017-06-05 08:02:40', 136, -1, ''),
+(116, 'asdds', '2017-06-05 08:03:10', 136, -1, ''),
+(117, 'asdds', '2017-06-05 08:03:10', 136, -1, ''),
+(118, 'asdsad', '2017-06-05 08:03:56', 136, -1, 'aaa@gmail.com'),
+(119, 'asdsad', '2017-06-05 08:06:49', 136, -1, 'aaa@gmail.com'),
+(120, 'sadsd', '2017-06-05 08:07:17', 136, -1, 'aaa@gmail.com'),
+(121, 'asdsad', '2017-06-05 08:08:52', 136, 120, 'aaa@gmail.com'),
+(122, 'sadsad', '2017-06-05 08:10:11', 136, 117, 'aaa@gmail.com'),
+(123, 'sads', '2017-06-05 08:21:06', 136, 121, 'aaa@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -149,7 +168,9 @@ INSERT INTO `topics` (`topic_id`, `admin_by`, `topic_subject`, `topic_content`, 
 (131, NULL, 'this is new topic', 'mcsdmvdsp', '2017-04-30', NULL, NULL),
 (132, NULL, 'What is your Name?', '', '2017-05-27', NULL, NULL),
 (133, NULL, 'sdfdsfds', 'dsfdsfdsf', '2017-05-27', NULL, NULL),
-(134, NULL, 'sadasd', 'asdasd', '2017-06-05', NULL, 'zzz@c');
+(134, NULL, 'sadasd', 'asdasd', '2017-06-05', NULL, 'zzz@c'),
+(135, NULL, 'aaa', 'sdfsd;fjdslkfsdf', '2017-06-05', NULL, 'zzz@c'),
+(136, NULL, 'asd', 'asdasd', '2017-06-05', NULL, 'aaa@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -173,7 +194,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `user_fname`, `user_lname`, `user_email`, `user_pass`, `role`) VALUES
 (1, 'poorna', 'perera', 'poorna@gmail.com', 'poorna@123', NULL),
 (4, 'thusha', 'buruwa', 'zzz@c', 'zxc', NULL),
-(5, 'sandum', 'avhdvsdhf', 'sa@d', 'zx', NULL);
+(5, 'sandum', 'avhdvsdhf', 'sa@d', 'zx', NULL),
+(6, 'aaaa', 'aaa', 'aaa@gmail.com', 'aaa', NULL);
 
 -- --------------------------------------------------------
 
@@ -262,7 +284,7 @@ ALTER TABLE `admin_details`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `post_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `post_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 --
 -- AUTO_INCREMENT for table `researchers`
 --
@@ -272,12 +294,12 @@ ALTER TABLE `researchers`
 -- AUTO_INCREMENT for table `topics`
 --
 ALTER TABLE `topics`
-  MODIFY `topic_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `topic_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `wallpapers`
 --

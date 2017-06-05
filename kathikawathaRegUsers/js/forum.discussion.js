@@ -3,6 +3,7 @@ var submitModel = "submitModel";
 var replayform = $('#replayform');
 var parentId = null;
 var topicId = $('#topicId').text();
+var name = $('#name').text();
 
 //rest the form when close the model
 replyModel.on('hidden.bs.modal', function(e) {
@@ -16,8 +17,7 @@ function ajaxReply(parent_id) {
 
 //model Post to forum button
 replyModel.on("click", "." + submitModel, function() {
-    var formData = replayform.serialize() + "&parentId=" + parentId +
-        "&topicId=" + topicId + "&action=postToForum";
+    var formData = replayform.serialize() + "&parentId=" + parentId + "&topicId=" + topicId + "&action=postToForum";
     $.ajax({
         type: "POST",
         url: "form.controller.php",
@@ -51,6 +51,7 @@ function show_replys(reply_json) {
             '<p class="topic-date mylbl">' + moment(value.post_date).fromNow() + '</p>' +
             '<div class="row"><div class="col-xs-push-1 col-xs-11 mylbl"><p>' + value.post_content + '</p></div></div>' +
             '<div class="row"><div class="col-xs-push-11 col-xs-1"><a class="btn btn-default btn-xs mylbl" onclick = "ajaxReply(' + value.post_id + ')"  > Reply </a></div></div>' +
+            '<div class="row"><div class="col-xs-push-1 col-xs-11 mylbl"><p>' + value.name + '</p></div></div>' +
             '</div><div style="margin-left:15px" id= reply' + value.post_id + '>');
     });
 }

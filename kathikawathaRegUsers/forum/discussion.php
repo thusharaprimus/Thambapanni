@@ -3,14 +3,6 @@ require_once ("connection.php");
 session_start();
 $name = $_SESSION['MM_Email'];
 ?>
-<?php
-  session_start();
-  if (!isset($_SESSION['MM_Email']))
-{
-    header("Location: index.php");
-    die();
-}
-?>
 
 <!DOCTYPE html>
 <html>
@@ -126,6 +118,7 @@ $name = $_SESSION['MM_Email'];
   </style>
 
 <body style=" margin-left: -110px;margin-right:100px;" background="../images/background.png">
+
 	 <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
 
@@ -141,7 +134,7 @@ $name = $_SESSION['MM_Email'];
 		<div class="col-sm-10 col-sm-push-2 col-xs-12 insert-form" style="padding: 2%; margin-top:-50px">
 			<div class="row">
 				<?php
-					$sql="SELECT topic_id, topic_subject, topic_content,topic_date FROM topics
+					$sql="SELECT topic_id, topic_subject, topic_content,topic_date, user FROM topics
 					WHERE topics.topic_id = " . mysqli_real_escape_string($db, isset($_GET['id']) ? $_GET['id'] : null);
 					$result= mysqli_query($db, $sql);
 					$row = mysqli_fetch_assoc($result);
@@ -158,8 +151,11 @@ $name = $_SESSION['MM_Email'];
                     
 					<div class="row">
                     	<div class="col-xs-push-1 col-xs-11 mylbl">
-                    		<p><?php echo $row['topic_content']; ?></p>
+                    		<p><h3><?php echo $row['topic_content']; ?></h3></p>
                     	</div>
+                      <div class="col-xs-push-1 col-xs-11 mylbl">
+                      <p>Asked by : <?php echo $row['user']; ?></p>
+                      </div>
                     </div>
 					
 					<a class="topic-date mylbl">EDIT</a>
@@ -277,6 +273,7 @@ $name = $_SESSION['MM_Email'];
 							<label class="control-label" for="message">Massage:</label>
 							<div>
 								<textarea class="massage form-row form-control" rows="6" cols="8" name="message" id = "message"></textarea>
+                <input type="text" name="name" value="<?php echo $name;?>">
 							</div>
 						</div>
 					</form>

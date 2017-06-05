@@ -10,11 +10,12 @@ if(isset($_POST) && count($_POST)){
     $message  = htmlspecialchars($_POST["message"]);
     $parentId = htmlspecialchars($_POST["parentId"]);
     $topicId  = htmlspecialchars($_POST["topicId"]);
+    $name = htmlspecialchars($_POST["name"]);
 
 
     // $query= "INSERT INTO post (post_content, post_date, post_topic) VALUES ('$message', '$date', '$id' )";
 
-    $query= "INSERT INTO post (post_content,post_topic,parent_post) VALUES ('$message','$topicId','$parentId')";
+    $query= "INSERT INTO post (post_content,post_topic,parent_post,name) VALUES ('$message','$topicId','$parentId', '$name')";
     $result= mysqli_query($db, $query);
 
     if($result){
