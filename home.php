@@ -1,6 +1,11 @@
 <?php require_once('db.php'); ?>
 <?php
   session_start();
+  if (!isset($_SESSION['MM_Email']))
+{
+    header("Location: index.php");
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

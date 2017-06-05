@@ -1,5 +1,15 @@
 <?php
 require_once ("connection.php");
+session_start();
+$name = $_SESSION['MM_Email'];
+?>
+<?php
+  session_start();
+  if (!isset($_SESSION['MM_Email']))
+{
+    header("Location: index.php");
+    die();
+}
 ?>
 
 <!DOCTYPE html>
@@ -8,6 +18,19 @@ require_once ("connection.php");
 
 		
 	<title>discussion</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
 	<link href="../bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
 	<link href="../css/forum.css" rel="stylesheet" type="text/css">
 	<link href="../css/navbar1n2.css" rel="stylesheet" type="text/css">
@@ -20,6 +43,74 @@ require_once ("connection.php");
 
 	<!--moment.js-->
 	<script src="../js/moment.js"></script>
+  <style>
+  p{
+    color:black;
+  }
+  .wrapper {
+  margin: 50px auto;
+  width: 80%;
+  height: 80%;
+  background: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+  -moz-box-shadow:    0px 0px 8px rgba(0,0,0,0.3);
+  box-shadow:         0px 0px 8px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 90;
+}
+
+.ribbon-wrapper-green {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
+
+.ribbon-green {
+  font: bold 15px Sans-Serif;
+  color: #333;
+  text-align: center;
+  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+  position: relative;
+  padding: 7px 0;
+  left: -5px;
+  top: 15px;
+  width: 120px;
+  background-color: #BFDC7A;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45)); 
+  background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45); 
+  background-image:    -moz-linear-gradient(top, #BFDC7A, #8EBF45); 
+  background-image:     -ms-linear-gradient(top, #BFDC7A, #8EBF45); 
+  background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45); 
+  color: #6a6340;
+  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+  box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.ribbon-green:before, .ribbon-green:after {
+  content: "";
+  border-top:   3px solid #6e8900;   
+  border-left:  3px solid transparent;
+  border-right: 3px solid transparent;
+  position:absolute;
+  bottom: -3px;
+}
+
+.ribbon-green:before {
+  left: 0;
+}
+.ribbon-green:after {
+  right: 0;
+}​
+  </style>
 
 </head>
 
@@ -35,7 +126,17 @@ require_once ("connection.php");
   </style>
 
 <body style=" margin-left: -110px;margin-right:100px;" background="../images/background.png">
-	
+	 <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
 	<div>
 		<div class="col-sm-10 col-sm-push-2 col-xs-12 insert-form" style="padding: 2%; margin-top:-50px">
 			<div class="row">
@@ -48,7 +149,9 @@ require_once ("connection.php");
 					// echo($id);
 				?>
 				<div  id = "topicId" style="display:none"> <?php echo $id; ?> </div>
-
+<div class="wrapper">
+       <div class="ribbon-wrapper-green"><div class="ribbon-green">NEWS</div></div>
+​
     			<div class="col-xs-12 thread-topic-content" id = "-1">
                     <p class="topic-subject mylbl"><?php echo $row['topic_subject']; ?></p>
                     <p class="topic-date mylbl"><?php echo $row['topic_date'] ?></p>
@@ -67,10 +170,14 @@ require_once ("connection.php");
         					<a class="btn btn-default btn-xs" onclick = "ajaxReply(-1)"> Reply </a>
                     	</div>
             		</div>
+                </div>
         		</div>
 			</div>
+<div class="wrapper">
+       <div class="ribbon-wrapper-green"><div class="ribbon-green">ANSWERS</div></div>
 			<div style="margin-left:15px;" id = "replytopLevel"> </div>
 		</div>
+    </div>
 	</div>
 
 	
@@ -182,7 +289,7 @@ require_once ("connection.php");
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 	<!-- start footer -->
-
+</div>
 	
 	<!-- end of footer -->
 	

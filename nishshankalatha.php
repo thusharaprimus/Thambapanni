@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+  if (!isset($_SESSION['MM_Email']))
+{
+    header("Location: index.php");
+    die();
+}
+?>
 <html lang="en">
     <head>
         <meta charset="utf-8">

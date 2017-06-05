@@ -1,4 +1,6 @@
 <?php 
+session_start();
+$name = $_SESSION['MM_Email'];
 $msg ='';
 require_once ('connection.php');
 if (!empty($_POST)) {
@@ -6,7 +8,7 @@ if (!empty($_POST)) {
   $message =$_POST['message'];
   $date= date('Y-m-d');
 
-  $query= "INSERT INTO topics (topic_subject, topic_content, topic_date) VALUES ('$topic' ,'$message', '$date' )";
+  $query= "INSERT INTO topics (topic_subject, topic_content, topic_date, user) VALUES ('$topic' ,'$message', '$date' ,'$name')";
   $result= mysqli_query($db, $query);
 
   if ($result){

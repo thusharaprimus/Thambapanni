@@ -2,7 +2,14 @@
 require_once ("connection.php");
 ?>
 
-
+<?php
+  session_start();
+  if (!isset($_SESSION['MM_Email']))
+{
+    header("Location: index.php");
+    die();
+}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -27,7 +34,7 @@ require_once ("connection.php");
 	        background-color: #e1e1d0;
 	    }
 	    table tr:nth-child(odd) {
-	        background-color: white;
+	        
 	    }
 		
 		input[type=text] {
@@ -57,8 +64,11 @@ require_once ("connection.php");
 
 body{
 	background-image:url('../images/background.png');
+    margin-left:-13%;
+    margin-top:-14%;
 
 	background-size:cover;   <!--mulu screen ekatama ganne mehemai-->
+    
 }
 	
 	</style>
@@ -73,7 +83,7 @@ body{
 			
 			
 			
-        
+        <div id="sys">
 		
 		 <div id="main" style="margin-top:-10%;margin-left:20%;">
             <div class="container">
@@ -112,29 +122,30 @@ body{
 			</div>
 			<div  class="row" style="padding: 1.5%">
 				<?php
-					$sql= "SELECT topic_id, topic_subject, topic_date, topic_by FROM topics";
+					$sql= "SELECT topic_id, topic_subject, topic_date, topic_by, user FROM topics";
 					$result= mysqli_query($db, $sql);
 
 					echo "<table>";
-			   		echo "<tr height='50'>";
+			   		echo "<tr height='50' >";
 
-				        echo "<th class='col-sm-8'> Topic </th>";
-				        echo "<th class='col-sm-2'> Posted Date </th>";
-				        echo "<th class='col-sm-2'> Posted by </th>";
+				        echo "<th class='col-sm-8 bg-danger'> Topic </th>";
+				        echo "<th class='col-sm-2 bg-danger'> Posted Date </th>";
+				        echo "<th class='col-sm-2 bg-danger'> Posted by </th>";
 
 			    	echo "</tr>";
 
 			    	echo "<tr>";
 			        foreach ($result as $user) {
-			          	echo  "<td class='col-sm-9 col-xs-9' height='50'>";
+			          	echo  "<td class='col-sm-9 col-xs-9 bg-danger' height='50'>";
 			          	echo "<a href='discussion.php?id=".$user['topic_id']."'>".$user['topic_subject']."</a>"." "."</td>";
 
-			          	echo  "<td height='50' class='col-sm-2 col-xs-2'>";
+			          	echo  "<td height='50' class='col-sm-2 col-xs-2 bg-danger'>";
 			            echo $user['topic_date']." "."</td>";
 
-			            echo "<td class='col-sm-2 col-xs-2'>";
-			            echo $user['topic_by']." "."</td>";
-			        echo "</tr>";   
+			            echo "<td class='col-sm-2 col-xs-2 bg-danger'>";
+			            echo $user['user']." "."</td>";
+			            echo "</tr>"; 
+                        echo "<tr> <td>   </td><td>   </td><td>   </td></tr>"  ;
 					}	
 					echo "</table>";
 				?>
